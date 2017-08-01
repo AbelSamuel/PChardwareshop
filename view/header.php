@@ -4,7 +4,7 @@
 <head>
     <title>PC Hardware Shop</title>
     <link rel="stylesheet" type="text/css"
-          href="/book_apps/ch05_guitar_shop/main.css">
+          href="/ch05_guitar_shop/main.css">
 </head>
 
 <!-- the body section -->
