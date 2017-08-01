@@ -37,7 +37,7 @@ function delete_product($product_id) {
 function add_product($category_id, $code, $name, $price) {
     global $db;
     $query = 'INSERT INTO products
-                 (categoryID, productCode, productName, listPrice)
+                 (categoryID, productCode, productName, listPrice, stock)
               VALUES
                  (:category_id, :code, :name, :price)';
     $statement = $db->prepare($query);
@@ -45,6 +45,7 @@ function add_product($category_id, $code, $name, $price) {
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
+    $statement->bindValue(':stock', $stock);
     $statement->execute();
     $statement->closeCursor();
 }
