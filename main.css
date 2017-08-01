@@ -91,10 +91,7 @@ form {
     margin-bottom: 2em;	
 }
 /* the styles for the div tags that divide the page into sections */
-#images {
-    height: 100px;
-    width: 150px;
-}
+
 
 #left_column {
     float: left;
@@ -105,6 +102,10 @@ form {
     float: left;
     padding-left: 1em;
     padding-bottom: 2em;
+}
+#images {
+    height: 100px;
+    width: 150px;
 }
 /* Additional styles for the Product Manager application */
 #add_product_form {
