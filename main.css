@@ -79,6 +79,12 @@ td, th {
 form {
 
 }
+
+img {
+    height: 200px;
+    width: 250px;
+    background-color: powderblue;
+}
 /* the styles for classes */
 .right {
     text-align: right;
