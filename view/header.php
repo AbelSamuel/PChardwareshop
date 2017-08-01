@@ -4,7 +4,7 @@
 <head>
     <title>PC Hardware Shop</title>
     <link rel="stylesheet" type="text/css"
-          href="/ch05_guitar_shop/main.css">
+          href="C:\xampp\htdocs\PChardwareshop\main.css">
 </head>
 
 <!-- the body section -->
