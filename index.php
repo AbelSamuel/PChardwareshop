@@ -8,6 +8,9 @@
         <li>
             <a href="product_catalog">Product Catalog</a>
         </li>
+        <li>
+            <a href="product_ordered">Ordered Objects</a>
+        </li>
     </ul>
 </main>
 <?php include 'view/footer.php'; ?>
