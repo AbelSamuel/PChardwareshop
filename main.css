@@ -97,8 +97,8 @@ form {
     float: left;
     width: 150px;
     text-align: center;
-    width: 100%;
-    height: 100%;
+    max-width: 150px;
+    max-height: 100px;
     border: 1px solid #D9D9D9;
 }
 #right_column {
