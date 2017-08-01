@@ -1,7 +1,8 @@
 <?php include '../view/header.php'; ?>
 <main>
     <aside>
-        <h1>Categories   </h1>
+        <h1>Categories</h1>
+        <br>
         <nav>
         <ul>
             <!-- display links for all categories -->

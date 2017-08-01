@@ -1,7 +1,8 @@
 <?php include '../view/header.php'; ?>
 <main>
     <aside>
-        <h1>Categories    </h1>
+        <h1>Categories</h1>
+        <br>
         <nav>
             <ul>
                 <!-- display links for all categories -->
@@ -19,12 +20,14 @@
     <section>
         <h1><?php echo $name; ?></h1>
         <div id="left_column">
-            <p>
+            
             <div id="images">
+            <p>
                 <img src="<?php echo $image_filename; ?>"
-                    alt="<?php echo $image_alt; ?>" /> <br>
+                    alt="<?php echo $image_alt; ?>" />
+                    </p>
                     </div>
-            </p>
+            
         </div>
 
         <div id="right_column">
