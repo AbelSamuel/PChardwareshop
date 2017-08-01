@@ -14,6 +14,7 @@
             </a>
             </li>
         <?php endforeach; ?>
+        <a href="/PChardwareshop/index.php">Home</a>
         </ul>
         </nav>
     </aside>
