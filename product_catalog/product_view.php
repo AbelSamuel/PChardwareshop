@@ -2,7 +2,7 @@
 <main>
     <aside>
         <h1>Categories</h1>
-        
+
         <nav>
             <ul>
                 <!-- display links for all categories -->
@@ -19,14 +19,11 @@
     </aside>
     <section>
         <h1><?php echo $name; ?></h1>
-        <div id="left_column">
-            
-            <div id="images">
+        <div id="left_column">             
             <p>
                 <img src="<?php echo $image_filename; ?>"
                     alt="<?php echo $image_alt; ?>" />
                     </p>
-                    </div>
             
         </div>
 
