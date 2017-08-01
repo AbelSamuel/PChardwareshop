@@ -1,21 +1,21 @@
 /* the styles for the HTML elements */
 html {
-    background-color: rgb(192, 192, 192);
+    background-color: #080a1c;
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
     width: 760px;
     margin: 0 auto;
     padding: 0 2em;
-    background-color: green;
+    background-color: #1e5691;
     border: 1px solid red;
 }
 header {
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #1e5691;
     padding: .5em 0;
 }
 header h1 {
-    color: green;
+    color: #1e5691;
 }
 main {
 
