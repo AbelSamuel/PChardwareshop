@@ -20,8 +20,10 @@
         <h1><?php echo $name; ?></h1>
         <div id="left_column">
             <p>
+            <div id="images">
                 <img src="<?php echo $image_filename; ?>"
                     alt="<?php echo $image_alt; ?>" />
+                    </div>
             </p>
         </div>
 

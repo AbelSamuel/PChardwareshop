@@ -80,11 +80,6 @@ form {
 
 }
 
-img {
-    height: 200px;
-    width: 250px;
-    background-color: powderblue;
-}
 /* the styles for classes */
 .right {
     text-align: right;
@@ -96,6 +91,10 @@ img {
     margin-bottom: 2em;	
 }
 /* the styles for the div tags that divide the page into sections */
+#images {
+    height: 200px;
+    width: 250px;
+}
 #left_column {
     float: left;
     width: 150px;
