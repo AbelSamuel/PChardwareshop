@@ -1,6 +1,6 @@
 <footer>
     <p class="copyright">
-        &copy; <?php echo date("Y"); ?> My Guitar Shop, Inc.
+        &copy; <?php echo date("Y"); ?> Kyle Poitinger, Abel Samuel, Kevin Hoang.
     </p>
 </footer>
 </body>
