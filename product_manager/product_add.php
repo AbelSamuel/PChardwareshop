@@ -26,6 +26,10 @@
         <input type="text" name="price" />
         <br>
 
+        <label>List Stock:</label>
+        <input type="text" name="stock" />
+        <br>
+
         <label>&nbsp;</label>
         <input type="submit" value="Add Product" />
         <br>
