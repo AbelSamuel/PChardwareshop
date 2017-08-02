@@ -44,8 +44,9 @@
                     <input type="submit" value="Delete">
                 </form></td>
             </tr>
-            <?php endforeach; ?>
+            <?php endforeach; ?>            
         </table>
+        <p><a href="PChardwareshop/product_ordered/index.php">Request Inventory</a></p>
         <p class="last_paragraph">
             <a href="?action=show_add_form">Add Product</a>
         </p>
