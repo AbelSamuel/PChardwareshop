@@ -9,8 +9,7 @@ function get_products_by_category($category_id) {
     $statement->execute();
     $products = $statement->fetchAll();
     $statement->closeCursor();
-    return $products;
-    
+    return $products;    
 }
 
 function get_product($product_id) {

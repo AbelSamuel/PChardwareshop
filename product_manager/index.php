@@ -39,7 +39,7 @@ if ($action == 'list_products') {
     include('product_add.php');    
 } else if ($action == 'show_order_form') {
     $categories = get_categories();
-    //include('../product_ordered/index.php'); 
+    include('product_add.php'); 
     }  else if ($action == 'add_product') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
