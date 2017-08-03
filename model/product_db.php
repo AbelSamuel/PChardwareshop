@@ -10,6 +10,7 @@ function get_products_by_category($category_id) {
     $products = $statement->fetchAll();
     $statement->closeCursor();
     return $products;
+    
 }
 
 function get_product($product_id) {
