@@ -33,6 +33,7 @@
             <tr>
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['productName']; ?></td>
+                <td><?php echo $product['stock']; ?></td>
                 <td class="right"><?php echo $product['listPrice']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
