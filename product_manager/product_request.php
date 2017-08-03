@@ -1,8 +1,8 @@
 <?php include '../view/header.php'; ?>
 <main>
     <h1>Order Product</h1>
-    <form action="index.php" method="post" id="request_product_form">
-        <input type="hidden" name="action" value="request_product">
+    <form action="index.php" method="post" id="order_product_form">
+        <input type="hidden" name="action" value="order_product">
 
         <label>Category:</label>
         <select name="category_id">
