@@ -26,6 +26,7 @@
             <tr>
                 <th>Code</th>
                 <th>Name</th>
+                <th>Stock</th>
                 <th class="right">Price</th>
                 <th>&nbsp;</th>
             </tr>
