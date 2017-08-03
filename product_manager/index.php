@@ -39,8 +39,8 @@ if ($action == 'list_products') {
     include('product_add.php');    
 } else if ($action == 'show_order_form') {
     $categories = get_categories();
-    include('product_add.php'); 
-    }  else if ($action == 'add_product') {
+    include('product_request.php'); 
+}  else if ($action == 'add_product') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     $code = filter_input(INPUT_POST, 'code');
@@ -54,5 +54,19 @@ if ($action == 'list_products') {
         add_product($category_id, $code, $name, $price);
         header("Location: .?category_id=$category_id");
     }
-}    
+} else if ($action == 'order_product') {
+    $order_id = filter_input(INPUT_POST, 'order_id', 
+            FILTER_VALIDATE_INT);
+    $code = filter_input(INPUT_POST, 'code');
+    $stock = filter_input(INPUT_POST, 'stock');
+    $date = filter_input(INPUT_POST, 'date');
+    if ($order_id == NULL || $order_id == FALSE || $code == NULL || 
+            $name == NULL || $stock == NULL || $stock == FALSE) {
+        $error = "Invalid product data. Check all fields and try again.";
+        include('../errors/error.php');
+    } else { 
+        order_product($order_id, $code, $stock, $date);
+        header("Location: .?category_id=$category_id");
+    }
+}   
 ?>

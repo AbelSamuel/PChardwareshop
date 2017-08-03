@@ -48,7 +48,7 @@
             </tr>
             <?php endforeach; ?>            
         </table>
-        <p><a href="?action=show_order_form">Request Order</a></p>
+        <p><a href="?action=show_order_form">Order Product</a></p>
         <p class="last_paragraph">
             <a href="?action=show_add_form">Add Product</a>
         </p>

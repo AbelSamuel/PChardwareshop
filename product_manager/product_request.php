@@ -1,8 +1,8 @@
 <?php include '../view/header.php'; ?>
 <main>
-    <h1>Add Product</h1>
-    <form action="index.php" method="post" id="add_product_form">
-        <input type="hidden" name="action" value="add_product">
+    <h1>Order Product</h1>
+    <form action="index.php" method="post" id="request_product_form">
+        <input type="hidden" name="action" value="request_product">
 
         <label>Category:</label>
         <select name="category_id">
@@ -31,7 +31,7 @@
         <br>
 
         <label>&nbsp;</label>
-        <input type="submit" value="Add Product" />
+        <input type="submit" value="Order Product"/>
         <br>
     </form>
     <p class="last_paragraph">

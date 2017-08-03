@@ -34,18 +34,33 @@ function delete_product($product_id) {
     $statement->closeCursor();
 }
 
-function add_product($category_id, $code, $name, $price) {
+function add_product($category_id, $code, $name, $price, $stock) {
     global $db;
     $query = 'INSERT INTO products
                  (categoryID, productCode, productName, listPrice, stock)
               VALUES
-                 (:category_id, :code, :name, :price)';
+                 (:category_id, :code, :name, :price, :stock)';
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
     $statement->bindValue(':stock', $stock);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+function order_product($order_id, $code, $stock, $date) {
+    global $db;
+    $query = 'INSERT INTO orders
+                 (orderID, productCode, stock, date)
+              VALUES
+                 (:order_id, :code, :stock, :date)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':order_id', $order_id);
+    $statement->bindValue(':code', $code);
+    $statement->bindValue(':stock', $stock);
+    $statement->bindValue(':date', $date);
     $statement->execute();
     $statement->closeCursor();
 }
