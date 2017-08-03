@@ -50,17 +50,15 @@ function add_product($category_id, $code, $name, $price, $stock) {
     $statement->closeCursor();
 }
 
-function order_product($order_id, $code, $stock, $date) {
+function order_product($category_id, $code, $stock) {
     global $db;
     $query = 'INSERT INTO orders
-                 (orderID, productCode, stock, date)
+                 (categoryID, productCode, stock)
               VALUES
-                 (:order_id, :code, :stock, :date)';
+                 (:category_id, :code, :stock)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':order_id', $order_id);
     $statement->bindValue(':code', $code);
     $statement->bindValue(':stock', $stock);
-    $statement->bindValue(':date', $date);
     $statement->execute();
     $statement->closeCursor();
 }
