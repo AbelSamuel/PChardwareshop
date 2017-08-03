@@ -18,16 +18,8 @@
         <input type="text" name="code" />
         <br>
 
-        <label>Name:</label>
-        <input type="text" name="name" />
-        <br>
-
-        <label>List Price:</label>
-        <input type="text" name="price" />
-        <br>
-
-        <label>List Stock:</label>
-        <input type="text" name="stock" />
+        <label>Amount:</label>
+        <input type="text" name="amount" />
         <br>
 
         <label>&nbsp;</label>

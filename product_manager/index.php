@@ -55,17 +55,16 @@ if ($action == 'list_products') {
         header("Location: .?category_id=$category_id");
     }
 } else if ($action == 'order_product') {
-    $order_id = filter_input(INPUT_POST, 'order_id', 
+    $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     $code = filter_input(INPUT_POST, 'code');
-    $stock = filter_input(INPUT_POST, 'stock');
-    $date = filter_input(INPUT_POST, 'date');
-    if ($order_id == NULL || $order_id == FALSE || $code == NULL || 
-            $name == NULL || $stock == NULL || $stock == FALSE) {
+    $amount = filter_input(INPUT_POST, 'amount');
+    if ($category_id == NULL || $category_id == FALSE || $code == NULL
+         ||  $amount == NULL) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
     } else { 
-        order_product($order_id, $code, $stock, $date);
+        order_product($category_id, $code, $amount);
         header("Location: .?category_id=$category_id");
     }
 }   
