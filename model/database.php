@@ -1,6 +1,6 @@
 <?php
     $dsn = 'mysql:host=localhost;dbname=my_pc_shop';
-    $username = 'mgs_user';
+    $username = 'root';
     $password = 'pa55word';
 
     try {
