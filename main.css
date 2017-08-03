@@ -127,3 +127,19 @@ form {
 #add_product_form input[text] {
     width: 15em;
 }
+
+#order_product_form {
+    margin: .5em 0;
+}
+#order_product_form label {
+    width: 6em;
+    padding-right: 1em;
+    padding-bottom: .5em;
+    float: left;
+}
+#order_product_form input {
+    float: left;
+}
+#order_product_form input[text] {
+    width: 15em;
+}
