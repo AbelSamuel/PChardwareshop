@@ -34,7 +34,7 @@
                 <td><?php echo $order['categoryID']; ?></td>                
                 <td><?php echo $order['productID']; ?></td>
                 <td><?php echo $order['amount']; ?></td>
-                <td><form action="." method="post">
+                <td><form action="." method="get">
                     <input type="hidden" name="action"
                            value="order_processed">
                     <input type="hidden" name="product_id"
