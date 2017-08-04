@@ -27,7 +27,7 @@ if ($action == 'list_orders') {
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE ||
             $product_id == NULL) {
-        $error = "Missing or incorrect product id or category id.";
+        $error = "Missing or incorrect product id or (hello)category id.";
         include('../errors/error.php');
     } else { 
         delete_order($product_id);
