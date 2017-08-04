@@ -55,10 +55,10 @@ if ($action == 'list_products') {
         header("Location: .?category_id=$category_id");
     }
 } else if ($action == 'order_product') {
-    $category_id = filter_input(INPUT_POST, 'category_id', 
+    $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
-    $product_id = filter_input(INPUT_POST, 'product_id');
-    $amount = filter_input(INPUT_POST, 'amount');
+    $product_id = filter_input(INPUT_GET, 'product_id');
+    $amount = filter_input(INPUT_GET, 'amount');
     if ($category_id == NULL || $category_id == FALSE || $product_id == NULL
          ||  $amount == NULL) {
         $error = "Invalid product data. Check all fields and try again.";

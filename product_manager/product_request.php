@@ -1,7 +1,7 @@
 <?php include '../view/header.php'; ?>
 <main>
     <h1>Order Product</h1>
-    <form action="index.php" method="post" id="order_product_form">
+    <form action="index.php" method="get" id="order_product_form">
         <input type="hidden" name="action" value="order_product">
 
         <label>Category:</label>

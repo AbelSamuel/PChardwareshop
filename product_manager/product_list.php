@@ -26,6 +26,7 @@
             <tr>
                 <th>Code</th>
                 <th>Name</th>
+                <th>ID</th>
                 <th>Stock</th>
                 <th class="right">Price</th>
                 <th>&nbsp;</th>
@@ -34,6 +35,7 @@
             <tr>
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['productName']; ?></td>
+                <td><?php echo $product['productID']; ?></td>
                 <td><?php echo $product['stock']; ?></td>
                 <td class="right"><?php echo $product['listPrice']; ?></td>
                 <td><form action="." method="post">
