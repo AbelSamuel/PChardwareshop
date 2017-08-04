@@ -12,6 +12,19 @@ function get_products_by_category($category_id) {
     return $products;    
 }
 
+function get_orders_by_category($category_id) {
+    global $db;
+    $query = 'SELECT * FROM orders
+              WHERE orders.categoryID = :category_id
+              ORDER BY productID';
+    $statement = $db->prepare($query);
+    $statement->bindValue(":category_id", $category_id);
+    $statement->execute();
+    $products = $statement->fetchAll();
+    $statement->closeCursor();
+    return $orders;    
+}
+
 function get_product($product_id) {
     global $db;
     $query = 'SELECT * FROM products
@@ -22,6 +35,18 @@ function get_product($product_id) {
     $product = $statement->fetch();
     $statement->closeCursor();
     return $product;
+}
+
+function get_order($product_id) {
+    global $db;
+    $query = 'SELECT * FROM orders
+              WHERE productID = :product_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(":product_id", $product_id);
+    $statement->execute();
+    $product = $statement->fetch();
+    $statement->closeCursor();
+    return $order;
 }
 
 function delete_product($product_id) {
