@@ -24,7 +24,8 @@
         <h2><?php echo $category_name; ?></h2>
         <table>
             <tr>
-                <th>Code</th>
+                <th>CategoryID</th>
+                <th>ProductID</th>
                 <th>Amount</th>
                 <th>&nbsp;</th>
             </tr>
