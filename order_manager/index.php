@@ -15,7 +15,7 @@ if ($action == 'list_orders') {
     $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE) {
-        $category_id = 1;
+        $category_id = 17;
     }
     $category_name = get_category_name($category_id);
     $categories = get_categories();
