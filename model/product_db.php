@@ -20,7 +20,7 @@ function get_orders_by_category($category_id) {
     $statement = $db->prepare($query);
     $statement->bindValue(":category_id", $category_id);
     $statement->execute();
-    $products = $statement->fetchAll();
+    $orders = $statement->fetchAll();
     $statement->closeCursor();
     return $orders;    
 }
@@ -44,7 +44,7 @@ function get_order($product_id) {
     $statement = $db->prepare($query);
     $statement->bindValue(":product_id", $product_id);
     $statement->execute();
-    $product = $statement->fetch();
+    $order = $statement->fetch();
     $statement->closeCursor();
     return $order;
 }
