@@ -34,4 +34,5 @@ if ($action == 'list_orders') {
         delete_order($product_id);
         header("Location: .?category_id=$category_id");
     }
+}
 ?>
