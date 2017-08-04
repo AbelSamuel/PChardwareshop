@@ -4,14 +4,8 @@
     <form action="index.php" method="get" id="order_product_form">
         <input type="hidden" name="action" value="order_product">
 
-        <label>Category:</label>
-        <select name="category_id">
-        <?php foreach ( $categories as $category ) : ?>
-            <option value="<?php echo $category['categoryID']; ?>">
-                <?php echo $category['categoryName']; ?>
-            </option>
-        <?php endforeach; ?>
-        </select>
+        <label>Category ID:</label>
+        <input type="text" name="category_id"/>
         <br>
 
         <label>Product ID:</label>

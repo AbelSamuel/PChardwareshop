@@ -65,8 +65,6 @@ if ($action == 'list_products') {
         include('../errors/error.php');
     } else {         
         order_product($category_id, $product_id, $amount);
-        $error = "Invalid productFDGDHFGHD data. Check all fields and try again.";
-        include('../errors/error.php');
         header("Location: .?category_id=$category_id");
     }
 }   
