@@ -19,7 +19,7 @@ if ($action == 'list_orders') {
     }
     $category_name = get_category_name($category_id);
     $categories = get_categories();
-    $products = get_products_by_category($category_id);
+    $orders = get_orders_by_category($category_id);
     include('order_list.php');
 } else if ($action == 'order_processed') {
     $product_id = filter_input(INPUT_POST, 'product_id', 

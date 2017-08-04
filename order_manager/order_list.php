@@ -30,7 +30,7 @@
             </tr>
             <?php foreach ($orders as $order) : ?>
             <tr>
-                <td><?php echo $product['productCode']; ?></td>
+                <td><?php echo $order['productCode']; ?></td>
                 <td><?php echo $order['amount']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
