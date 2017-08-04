@@ -15,7 +15,7 @@
         <br>
 
         <label>Code:</label>
-        <input type="text" name="code" />
+        <input type="text" name="product_id" />
         <br>
 
         <label>Amount:</label>

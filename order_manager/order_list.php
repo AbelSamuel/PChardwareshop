@@ -31,7 +31,7 @@
             <?php foreach ($orders as $order) : ?>
             <tr>
                 <td><?php echo $order['productID']; ?></td>
-                <td><?php echo $order['productAmount']; ?></td>
+                <td><?php echo $order['amount']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
                            value="order_processed">

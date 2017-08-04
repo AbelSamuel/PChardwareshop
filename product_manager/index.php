@@ -57,9 +57,9 @@ if ($action == 'list_products') {
 } else if ($action == 'order_product') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
-    $code = filter_input(INPUT_POST, 'code');
+    $product_id = filter_input(INPUT_POST, 'product_id');
     $amount = filter_input(INPUT_POST, 'amount');
-    if ($category_id == NULL || $category_id == FALSE || $code == NULL
+    if ($category_id == NULL || $category_id == FALSE || $product_id == NULL
          ||  $amount == NULL) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
