@@ -30,6 +30,7 @@
             </tr>
             <?php foreach ($orders as $order) : ?>
             <tr>
+                <td><?php echo $order['categoryID']; ?></td>                
                 <td><?php echo $order['productID']; ?></td>
                 <td><?php echo $order['amount']; ?></td>
                 <td><form action="." method="post">
@@ -39,7 +40,7 @@
                            value="<?php echo $order['productID']; ?>">
                     <input type="hidden" name="category_id"
                            value="<?php echo $order['categoryID']; ?>">
-                    <input type="submit" value="Process">
+                    <input type="submit" value="Process Order">
                 </form></td>
             </tr>
             <?php endforeach; ?>            

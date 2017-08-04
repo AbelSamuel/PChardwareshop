@@ -63,8 +63,8 @@ if ($action == 'list_products') {
          ||  $amount == NULL) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
-    } else { 
-        order_product($category_id, $code, $amount);
+    } else {         
+        order_product($category_id, $product_id, $amount);
         header("Location: .?category_id=$category_id");
     }
 }   

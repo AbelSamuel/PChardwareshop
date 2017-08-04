@@ -19,6 +19,9 @@
     </aside>
     <section>
         <h1><?php echo $category_name; ?></h1>
+
+        
+
         <nav>
         <ul>
             <!-- display links for products in selected category -->
