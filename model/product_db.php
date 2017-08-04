@@ -92,7 +92,7 @@ function order_product($category_id, $product_id, $amount) {
               VALUES
                  (:category_id, :product_id, :amount)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $productID);
+    $statement->bindValue(':product_id', $product_id);
     $statement->bindValue(':amount', $amount);
     $statement->execute();
     $statement->closeCursor();
