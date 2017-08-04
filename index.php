@@ -9,7 +9,7 @@
             <a href="product_catalog">Product Catalog</a>
         </li>
         <li>
-            <a href="product_ordered">Ordered Objects</a>
+            <a href="order_manager">Order Manager</a>
         </li>
     </ul>
 </main>
