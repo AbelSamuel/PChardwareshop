@@ -34,6 +34,16 @@ function delete_product($product_id) {
     $statement->closeCursor();
 }
 
+function delete_order($product_id) {
+    global $db;
+    $query = 'DELETE FROM orders
+              WHERE productID = :product_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':product_id', $product_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 function add_product($category_id, $code, $name, $price, $stock) {
     global $db;
     $query = 'INSERT INTO products
