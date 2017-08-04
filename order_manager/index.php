@@ -34,7 +34,7 @@ if ($action == 'list_orders') {
         $categories = get_categories();
         $orders = get_orders_by_category($category_id);
         delete_order($product_id);
-        include('order_list.php');
+        header("Location: .?category_id=$category_id");
     }
 }
 ?>
