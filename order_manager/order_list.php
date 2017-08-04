@@ -36,9 +36,9 @@
                     <input type="hidden" name="action"
                            value="order_processed">
                     <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
+                           value="<?php echo $order['productID']; ?>">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $product['categoryID']; ?>">
+                           value="<?php echo $order['categoryID']; ?>">
                     <input type="submit" value="Process">
                 </form></td>
             </tr>
