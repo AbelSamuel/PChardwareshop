@@ -28,7 +28,7 @@
                 <th>Amount</th>
                 <th>&nbsp;</th>
             </tr>
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($orders as $order) : ?>
             <tr>
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $order['amount']; ?></td>
