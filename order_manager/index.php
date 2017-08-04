@@ -22,9 +22,9 @@ if ($action == 'list_orders') {
     $orders = get_orders_by_category($category_id);
     include('order_list.php');
 } else if ($action == 'order_processed') {
-    $product_id = filter_input(INPUT_POST, 'product_id', 
+    $product_id = filter_input(INPUT_POST, 'productID', 
             FILTER_VALIDATE_INT);
-    $category_id = filter_input(INPUT_POST, 'category_id', 
+    $category_id = filter_input(INPUT_POST, 'categoryID', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE ||
             $product_id == NULL || $product_id == FALSE) {
