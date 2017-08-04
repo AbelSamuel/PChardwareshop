@@ -66,6 +66,7 @@ if ($action == 'list_products') {
     } else { 
         order_product($category_id, $code, $amount);
         header("Location: .?category_id=$category_id");
+        include('../order_manager/order_list.php');
     }
 }   
 ?>
