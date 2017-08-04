@@ -22,8 +22,8 @@ if ($action == 'list_orders') {
     $orders = get_orders_by_category($category_id);
     include('order_list.php');
 } else if ($action == 'order_processed') {
-    $product_id = filter_input(INPUT_GET, 'productID');
-    $category_id = filter_input(INPUT_GET, 'categoryID', 
+    $product_id = filter_input(INPUT_GET, 'product_id');
+    $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE ||
             $product_id == NULL) {
