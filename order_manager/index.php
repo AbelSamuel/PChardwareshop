@@ -30,6 +30,9 @@ if ($action == 'list_orders') {
         $error = "Missing or incorrect product id or category id.";
         include('../errors/error.php');
     } else { 
+        $category_name = get_category_name($category_id);
+        $categories = get_categories();
+        $orders = get_orders_by_category($category_id);
         delete_order($product_id);
         include('order_list.php');
     }
