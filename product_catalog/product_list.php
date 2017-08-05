@@ -20,11 +20,9 @@
     <section>
         <h1><?php echo $category_name; ?></h1>
         <table>
-            <tr>
-                
+            <tr>                
                 <th>Name</th>
                 <th class="right">Price</th>
-                <th>&nbsp;</th>
             </tr>
             <?php foreach ($products as $product) : ?>
             <tr>
@@ -36,10 +34,8 @@
                 <form action="." method="post">
                     <input type="hidden" name="action"
                            value="sort_products">
-                    <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $product['categoryID']; ?>">
+                           value="<?php echo $category['categoryID']; ?>">
                     <input type="submit" value="Sort">
                 </form>
     </section>
