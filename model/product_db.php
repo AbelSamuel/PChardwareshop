@@ -39,7 +39,7 @@ function add_product_to_cart($product_id, $productCode, $productName, $totalPric
     $query = 'INSERT INTO cart
                  (productID, productCode, productName, totalPrice)
               VALUES
-                 (:product_id, :productCode, :productName, :totalPrice)';
+                 (1, 'SSD2', 'namee', 35.00)';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
     $statement->bindValue(':productCode', $productCode);
@@ -48,6 +48,21 @@ function add_product_to_cart($product_id, $productCode, $productName, $totalPric
     $statement->execute();
     $statement->closeCursor();
 }
+
+/*function add_product_to_cart($product_id, $productCode, $productName, $totalPrice) {
+    global $db;
+    $query = 'INSERT INTO cart
+                 (productID, productCode, productName, totalPrice)
+              VALUES
+                 (:product_id, :productCode, :productName, :totalPrice)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':productCode', $productCode);
+    $statement->bindValue(':productName', $productName);
+    $statement->bindValue(':totalPrice', $totalPrice);
+    $statement->execute();
+    $statement->closeCursor();
+}*/
 
 function get_product($product_id) {
     global $db;
