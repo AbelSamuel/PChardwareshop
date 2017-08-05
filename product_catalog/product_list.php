@@ -35,7 +35,7 @@
                     <input type="hidden" name="action"
                            value="sort_products">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $category['categoryID']; ?>">
+                           value="<?php echo $products['categoryID']; ?>">
                     <input type="submit" value="Sort">
                 </form>
     </section>
