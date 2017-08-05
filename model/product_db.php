@@ -84,6 +84,16 @@ function delete_product($product_id) {
     $statement->closeCursor();
 }
 
+function remove_from_cart($product_id) {
+    global $db;
+    $query = 'DELETE FROM cart
+              WHERE productID = :product_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':product_id', $product_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 function delete_order($product_id) {
     global $db;
     $query = 'DELETE FROM orders
