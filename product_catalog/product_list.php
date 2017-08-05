@@ -34,10 +34,8 @@
                 <form action="." method="post">
                     <input type="hidden" name="action"
                            value="sort_products">
-                    <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $product['categoryID']; ?>">
+                           value="<?php echo $category['categoryID']; ?>">
                     <input type="submit" value="Sort">
                 </form>
     </section>
