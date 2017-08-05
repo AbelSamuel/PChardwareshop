@@ -39,7 +39,7 @@ function add_product_to_cart($product_id, $productCode, $productName, $totalPric
     $query = 'INSERT INTO cart
                  (productID, productCode, productName, totalPrice)
               VALUES
-                 (1, 'SSD2', 'namee', 35.00)';
+                 (:1, :1, :1, 35.00)';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
     $statement->bindValue(':productCode', $productCode);
