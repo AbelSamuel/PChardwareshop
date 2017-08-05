@@ -28,13 +28,13 @@ if ($action == 'view_cart') {
         include('../errors/error.php');
     } else { 
         add_product_to_cart($product_id, $code, $name, $totalPrice);
+        header("Location: .?category_id=$category_id");
         $cart = get_cart();
         include('cart_view.php');
 } }  else if ($action == 'remove_from_cart') {
 	$product_id = filter_input(INPUT_POST, 'product_id', 
             FILTER_VALIDATE_INT);
 	remove_from_cart($product_id);
-    header("Location: .?category_id=$category_id");
 	$cart = get_cart();
 	include('cart_view.php');
 }
