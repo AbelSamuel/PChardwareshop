@@ -62,12 +62,11 @@ if ($action == 'list_products') {
         $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE) {
-        $category_id = 1;
+        $category_id = 5;
     }
     $categories = get_categories();
     $category_name = get_category_name($category_id);
     $products = sort_products_by_price($category_id);
-    header("Location: .?category_id=$category_id");
     include('product_list.php');
     }
 ?>
