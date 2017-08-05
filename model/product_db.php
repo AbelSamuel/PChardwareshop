@@ -35,17 +35,15 @@ function get_cart() {
 }
 
 
-function add_product_to_cart($product_id, $productCode, $productName, $totalPrice) {
+function add_product_to_cart($product_id, $quantity) {
     global $db;
     $query = 'INSERT INTO cart
-                 (productID, productCode, productName, totalPrice)
+                 (productID, quantity)
               VALUES
-                 (:product_id, :productCode, :productName, :totalPrice)';
+                 (:product_id, :quantity)';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
-    $statement->bindValue(':productCode', $productCode);
-    $statement->bindValue(':productName', $productName);
-    $statement->bindValue(':totalPrice', $totalPrice);
+    $statement->bindValue(':quantity', $quantity);
     $statement->execute();
     $statement->closeCursor();
 }

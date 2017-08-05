@@ -14,28 +14,15 @@ if ($action == NULL) {
 if ($action == 'view_cart') {
     $cart = get_cart();
     include('cart_view.php');
-} else if ($action == 'add_to_cart') {
-	$product_id = filter_input(INPUT_POST, 'product_id');
-	$product = get_product($product_id);
-    $code = $product['productCode'];
-    $name = $product['productName'];
-    $list_price = $product['listPrice'];
-    $quantity = filter_input(INPUT_POST, 'quantity');
-    $totalPrice = $list_price * $quantity;
-    if ($product_id == NULL || $product_id == FALSE || $code == NULL || 
-            $name == NULL || $price == NULL || $price == FALSE) {
-        $error = "Invalid product(broken) data. Check all fields and try again." + $code + " " + $name + " " + $product_id + " " + 
-    $list_price + " " + $quantity + " " + $totalPrice;
-        include('../errors/error.php');
-    } else { 
-        $error = "Invalid product data(fine). Check all fields and try again." + $code + " " + $name + " " + $product_id + " " + 
-    $list_price + " " + $quantity + " " + $totalPrice;
-        include('../errors/error.php');
-        add_product_to_cart($product_id, $code, $name, $totalPrice);
-        header("Location: .?category_id=$category_id");
-        $cart = get_cart();
-        include('cart_view.php');
-} }  else if ($action == 'remove_from_cart') {
+}
+ else if ($action == 'add_to_cart') {
+	$product_id = filter_input(INPUT_POST, 'product_id');	
+    $quantity = filter_input(INPUT_POST, 'quantity'); 
+    add_product_to_cart($product_id, $quantity);
+    $cart = get_cart();
+    include('cart_view.php');
+} 
+  else if ($action == 'remove_from_cart') {
 	$product_id = filter_input(INPUT_POST, 'product_id', 
             FILTER_VALIDATE_INT);
 	remove_from_cart($product_id);
