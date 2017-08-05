@@ -1,6 +1,7 @@
 <?php include '../view/header.php'; ?>
 <main>
     <h1>Your Cart</h1>
+    <br>
     <a href="/PChardwareshop/index.php">Home</a>
     <section>
         <!-- display a table of products in cart -->

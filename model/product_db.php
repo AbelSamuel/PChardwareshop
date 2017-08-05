@@ -27,12 +27,11 @@ function get_orders_by_category($category_id) {
 
 function get_cart() {
     global $db;
-    $query = 'SELECT * FROM cart';
+    $query = 'SELECT * FROM cart
+              ORDER BY productID';
     $statement = $db->prepare($query);
     $statement->execute();
-    $cart = $statement->fetchAll();
-    $statement->closeCursor();
-    return $cart;    
+    return $statement;    
 }
 
 function add_product_to_cart($product_id, $productCode, $productName, $totalPrice) {
@@ -40,11 +39,11 @@ function add_product_to_cart($product_id, $productCode, $productName, $totalPric
     $query = 'INSERT INTO cart
                  (productID, productCode, productName, totalPrice)
               VALUES
-                 (:product_id, :code, :name, :totalPrice)';
+                 (:product_id, :productCode, :productName, :totalPrice)';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
-    $statement->bindValue(':code', $code);
-    $statement->bindValue(':name', $name);
+    $statement->bindValue(':code', $productCode);
+    $statement->bindValue(':name', $productName);
     $statement->bindValue(':totalPrice', $totalPrice);
     $statement->execute();
     $statement->closeCursor();
