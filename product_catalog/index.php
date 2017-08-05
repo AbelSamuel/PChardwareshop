@@ -52,5 +52,9 @@ if ($action == 'list_products') {
         include('product_view.php');
     }
 }
+    else if ($action == 'request_item')
+    {
+        include('request_thanks.php');
+    }
 
 ?>
