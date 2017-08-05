@@ -42,8 +42,8 @@ function add_product_to_cart($product_id, $productCode, $productName, $totalPric
                  (:product_id, :productCode, :productName, :totalPrice)';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
-    $statement->bindValue(':code', $productCode);
-    $statement->bindValue(':name', $productName);
+    $statement->bindValue(':productCode', $productCode);
+    $statement->bindValue(':productName', $productName);
     $statement->bindValue(':totalPrice', $totalPrice);
     $statement->execute();
     $statement->closeCursor();

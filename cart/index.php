@@ -21,11 +21,10 @@ if ($action == 'view_cart') {
     $code = $product['productCode'];
     $name = $product['productName'];
     $list_price = $product['listPrice'];
-    $quantity = filter_input(INPUT_GET, 'quantity', 
-            FILTER_VALIDATE_INT);
+    $quantity = filter_input(INPUT_POST, 'quantity');
     $totalPrice = $list_price * $quantity;
-
     add_product_to_cart($product_id, $code, $name, $totalPrice);
+    $cart = get_cart();
     include('cart_view.php');
 } else if ($action == 'remove_from_cart') {
 	$product_id = filter_input(INPUT_POST, 'product_id', 
