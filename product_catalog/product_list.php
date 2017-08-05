@@ -19,22 +19,29 @@
     </aside>
     <section>
         <h1><?php echo $category_name; ?></h1>
-
-        
-
-        <nav>
-        <ul>
-            <!-- display links for products in selected category -->
+        <table>
+            <tr>
+                
+                <th>Name</th>
+                <th class="right">Price</th>
+                <th>&nbsp;</th>
+            </tr>
             <?php foreach ($products as $product) : ?>
-            <li>
-                <a href="?action=view_product&amp;product_id=<?php 
-                          echo $product['productID']; ?>">
-                    <?php echo $product['productName']; ?>
-                </a>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-        </nav>
+            <tr>
+                <td><?php echo $product['productName']; ?></td>
+                <td class="right"><?php echo $product['listPrice']; ?></td>
+            </tr>
+            <?php endforeach; ?>            
+        </table>
+                <form action="." method="post">
+                    <input type="hidden" name="action"
+                           value="sort_products">
+                    <input type="hidden" name="product_id"
+                           value="<?php echo $product['productID']; ?>">
+                    <input type="hidden" name="category_id"
+                           value="<?php echo $product['categoryID']; ?>">
+                    <input type="submit" value="Sort">
+                </form>
     </section>
 </main>
 <?php include '../view/footer.php'; ?>
