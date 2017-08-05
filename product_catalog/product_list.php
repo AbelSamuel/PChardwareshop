@@ -31,11 +31,11 @@
             </tr>
             <?php endforeach; ?>            
         </table>
-                <form action="." method="post">
+                <form action="." method="get">
                     <input type="hidden" name="action"
                            value="sort_products">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $products['categoryID']; ?>">
+                           value="<?php echo $category['categoryID']; ?>">
                     <input type="submit" value="Sort">
                 </form>
     </section>
