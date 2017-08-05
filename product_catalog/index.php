@@ -67,6 +67,7 @@ if ($action == 'list_products') {
     $categories = get_categories();
     $category_name = get_category_name($category_id);
     $products = sort_products_by_price($category_id);
+    header("Location: .?category_id=$category_id");
     include('product_list.php');
     }
 ?>
