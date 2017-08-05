@@ -46,12 +46,13 @@ if ($action == 'list_products') {
     $code = filter_input(INPUT_POST, 'code');
     $name = filter_input(INPUT_POST, 'name');
     $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+    $stock = filter_input(INPUT_POST, 'stock');
     if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
             $name == NULL || $price == NULL || $price == FALSE) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
     } else { 
-        add_product($category_id, $code, $name, $price);
+        add_product($category_id, $code, $name, $price, $stock);
         header("Location: .?category_id=$category_id");
     }
 } else if ($action == 'order_product') {

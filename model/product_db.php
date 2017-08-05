@@ -25,29 +25,6 @@ function get_orders_by_category($category_id) {
     return $orders;    
 }
 
-function get_cart() {
-    global $db;
-    $query = 'SELECT * FROM cart
-              ORDER BY productID';
-    $statement = $db->prepare($query);
-    $statement->execute();
-    return $statement;    
-}
-
-
-function add_product_to_cart($product_id, $quantity) {
-    global $db;
-    $query = 'INSERT INTO cart
-                 (productID, quantity)
-              VALUES
-                 (:product_id, :quantity)';
-    $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $product_id);
-    $statement->bindValue(':quantity', $quantity);
-    $statement->execute();
-    $statement->closeCursor();
-}
-
 function get_product($product_id) {
     global $db;
     $query = 'SELECT * FROM products
@@ -75,16 +52,6 @@ function get_order($product_id) {
 function delete_product($product_id) {
     global $db;
     $query = 'DELETE FROM products
-              WHERE productID = :product_id';
-    $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $product_id);
-    $statement->execute();
-    $statement->closeCursor();
-}
-
-function remove_from_cart($product_id) {
-    global $db;
-    $query = 'DELETE FROM cart
               WHERE productID = :product_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
