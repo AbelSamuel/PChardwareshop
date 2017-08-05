@@ -24,9 +24,13 @@ if ($action == 'view_cart') {
     $totalPrice = $list_price * $quantity;
     if ($product_id == NULL || $product_id == FALSE || $code == NULL || 
             $name == NULL || $price == NULL || $price == FALSE) {
-        $error = "Invalid product data. Check all fields and try again.";
+        $error = "Invalid product(broken) data. Check all fields and try again." + $code + " " + $name + " " + $product_id + " " + 
+    $list_price + " " + $quantity + " " + $totalPrice;
         include('../errors/error.php');
     } else { 
+        $error = "Invalid product data(fine). Check all fields and try again." + $code + " " + $name + " " + $product_id + " " + 
+    $list_price + " " + $quantity + " " + $totalPrice;
+        include('../errors/error.php');
         add_product_to_cart($product_id, $code, $name, $totalPrice);
         header("Location: .?category_id=$category_id");
         $cart = get_cart();
