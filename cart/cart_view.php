@@ -2,7 +2,9 @@
 <main>
     <h1>Your Cart</h1>
     <br>
+    <aside>
     <a href="/PChardwareshop/index.php">Home</a>
+    </aside>
     <section>
         <!-- display a table of products in cart -->
         <h2>Cart</h2>
@@ -11,13 +13,11 @@
                 <th>Name</th>
                 <th>Code</th>                
                 <th>ID</th>
-                <th>Quantity</th>
                 <th class="right">Total Price</th>
                 <th>&nbsp;</th>
             </tr>
             <?php foreach ($cart as $product) : ?>
-            <tr>
-                
+            <tr>                
                 <td><?php echo $product['productName']; ?></td>
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['productID']; ?></td>
