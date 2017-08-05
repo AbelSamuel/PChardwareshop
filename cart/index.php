@@ -2,50 +2,32 @@
 require('../model/database.php');
 require('../model/product_db.php');
 require('../model/category_db.php');
-require('../model/cart_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
-    if ($action == NULL) {        
-        $action = 'view';
+    if ($action == NULL) {
+        $action = 'view_cart';
     }
 }
 
-switch ($action) {
-    case 'view':
-        $cart = cart_get_items();
-        break;
-    case 'add':
-        $product_id = filter_input(INPUT_GET, 'product_id', FILTER_VALIDATE_INT);
-        $quantity = filter_input(INPUT_GET, 'quantity');
+if ($action == 'view_cart') {
+    $cart = get_cart();
+    include('cart_view.php');
+} else if ($action == 'add_to_cart') {
+	$product_id = filter_input(INPUT_POST, 'product_id', 
+            FILTER_VALIDATE_INT);
+	$product = get_product($product_id);
+    $code = $product['productCode'];
+    $name = $product['productName'];
+    $list_price = $product['listPrice'];
+    $quantity = filter_input(INPUT_GET, 'quantity', 
+            FILTER_VALIDATE_INT);
+    $totalPrice = ($list_price * $quantity);
 
-        // validate the quantity entry
-        if ($quantity === null) {
-            display_error('You must enter a quantity.');
-        } elseif (!is_valid_number($quantity, 1)) {
-            display_error('Quantity must be 1 or more.');
-        }
-
-        cart_add_item($product_id, $quantity);
-        $cart = cart_get_items();
-        break;
-    case 'update':
-        $items = filter_input(INPUT_POST, 'items', FILTER_DEFAULT, 
-                FILTER_REQUIRE_ARRAY);
-        foreach ( $items as $product_id => $quantity ) {
-            if ($quantity == 0) {
-                cart_remove_item($product_id);
-            } else {
-                cart_update_item($product_id, $quantity);
-            }
-        }
-        $cart = cart_get_items();
-        break;
-    default:
-        add_error("Unknown cart action: " . $action);
-        break;
+    add_product_to_cart($product_id, $code, $name, $totalPrice);
+    include('cart_view.php');
 }
-include './list_cart.php';
+
 
 ?>

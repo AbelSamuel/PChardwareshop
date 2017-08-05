@@ -25,6 +25,31 @@ function get_orders_by_category($category_id) {
     return $orders;    
 }
 
+function get_cart() {
+    global $db;
+    $query = 'SELECT * FROM cart';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $cart = $statement->fetchAll();
+    $statement->closeCursor();
+    return $cart;    
+}
+
+function add_product_to_cart($product_id, $productCode, $productName, $totalPrice) {
+    global $db;
+    $query = 'INSERT INTO cart
+                 (productID, productCode, productName, totalPrice)
+              VALUES
+                 (:product_id, :code, :name, :totalPrice)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':code', $code);
+    $statement->bindValue(':name', $name);
+    $statement->bindValue(':totalPrice', $totalPrice);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 function get_product($product_id) {
     global $db;
     $query = 'SELECT * FROM products

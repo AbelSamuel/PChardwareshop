@@ -29,12 +29,9 @@
         </div>
 
         <div id="right_column">
-            <p><b>List Price:</b> $<?php echo $list_price; ?></p>
-            <p><b>Discount:</b> <?php echo $discount_percent; ?>%</p>
-            <p><b>Your Price:</b> $<?php echo $unit_price_f; ?>
-                 (You save $<?php echo $discount_amount_f; ?>)</p>
+            <p><b>List Price:</b> $<?php echo $list_price; ?></p>                
             <form action="<?php echo '../cart' ?>" method="post">
-                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="action" value="add_to_cart">
                 <input type="hidden" name="product_id"
                        value="<?php echo $product_id; ?>">
                 <b>Quantity:</b>
