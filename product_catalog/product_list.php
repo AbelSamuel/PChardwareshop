@@ -31,7 +31,7 @@
             </tr>
             <?php endforeach; ?>            
         </table>
-                <form action="." method="get">
+                <form action="." method="post">
                     <input type="hidden" name="action"
                            value="sort_products">
                     <input type="hidden" name="category_id"
