@@ -30,7 +30,7 @@
 
         <div id="right_column">
             <p><b>List Price:</b> $<?php echo $list_price; ?></p>                
-            <form action="<?php echo '../cart' ?>" method="post">
+            <form action="../cart" method="post">
                 <input type="hidden" name="action" value="add_to_cart">
                 <input type="hidden" name="product_id"
                        value="<?php echo $product_id; ?>">

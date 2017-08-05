@@ -15,8 +15,7 @@ if ($action == 'view_cart') {
     $cart = get_cart();
     include('cart_view.php');
 } else if ($action == 'add_to_cart') {
-	$product_id = filter_input(INPUT_POST, 'product_id', 
-            FILTER_VALIDATE_INT);
+	$product_id = filter_input(INPUT_POST, 'product_id');
 	$product = get_product($product_id);
     $code = $product['productCode'];
     $name = $product['productName'];
