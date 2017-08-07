@@ -26,7 +26,10 @@
             </tr>
             <?php foreach ($products as $product) : ?>
             <tr>
-                <td><?php echo $product['productName']; ?></td>
+                <td><a href="?action=view_product&amp;product_id=<?php 
+                          echo $product['productID']; ?>">
+                    <?php echo $product['productName']; ?>
+                </a></td>
                 <td class="right"><?php echo $product['listPrice']; ?></td>
             </tr>
             <?php endforeach; ?>            
