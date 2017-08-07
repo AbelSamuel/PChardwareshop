@@ -23,10 +23,10 @@ CREATE TABLE products (
 );
 
 CREATE TABLE orders (
-  orderID        INT(11)        NOT NULL   AUTO_INCREMENT,
-  customerID     INT            NOT NULL,
-  orderDate      DATETIME       NOT NULL,
-  PRIMARY KEY (orderID)
+  categoryID        INT(11)        NOT NULL   AUTO_INCREMENT,
+  productID     INT            NOT NULL,
+  amount      DATETIME       NOT NULL,
+  PRIMARY KEY (productID)
 );
 
 -- insert data into the database
@@ -68,10 +68,10 @@ INSERT INTO products VALUES
 GRANT SELECT, INSERT, DELETE, UPDATE
 ON my_pc_shop.*
 TO mgs_user@localhost
-IDENTIFIED BY 'pa55word';
+IDENTIFIED BY 'root';
 
 GRANT SELECT
 ON products
 TO mgs_tester@localhost
-IDENTIFIED BY 'pa55word';
+IDENTIFIED BY 'root';
 
