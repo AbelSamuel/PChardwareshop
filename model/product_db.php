@@ -98,6 +98,44 @@ function add_product($category_id, $code, $name, $price, $stock) {
     $statement->closeCursor();
 }
 
+function add_product_to_cart($product_id, $quantity, $totalPrice)
+{
+    global $db;
+    $query = 'INSERT INTO cart
+                 (productID, quantity, totalPrice)
+              VALUES
+                 (:product_id, :quantity, :totalPrice)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':quantity', $quantity);
+    $statement->bindValue(':totalPrice', $totalPrice);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+function get_cart()
+{
+    global $db;
+    $query = 'SELECT * FROM cart
+              ORDER BY productID';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $products = $statement->fetchAll();
+    $statement->closeCursor();
+    return $products;    
+}
+
+function remove_from_cart($product_id)
+{
+    global $db;
+    $query = 'DELETE FROM cart
+              WHERE productID = :product_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':product_id', $product_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 function order_product($category_id, $product_id, $amount) {
     global $db;
     $query = 'INSERT INTO orders

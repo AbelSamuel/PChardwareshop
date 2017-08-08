@@ -11,6 +11,9 @@
         <li>
             <a href="order_manager">Order Manager</a>
         </li>
+        <li>
+            <a href="cart">Cart</a>
+        </li>
     </ul>
 </main>
 <?php include 'view/footer.php'; ?>

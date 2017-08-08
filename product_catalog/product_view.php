@@ -30,15 +30,15 @@
 
         <div id="right_column">
             <p><b>List Price:</b> $<?php echo $list_price; ?></p>                
-            <form action="index.php" method="post">
-                <input type="hidden" name="action" value="request_item">
+            <form action="." method="post">
+                <input type="hidden" name="action" value="add_to_cart">
                 <input type="hidden" name="product_id"
                        value="<?php echo $product_id; ?>">
                 <b>Quantity:</b>
                 <input id="quantity" type="text" name="quantity" 
                        value="1" size="2">
                 <br><br>
-                <input type="submit" value="Request Item">
+                <input type="submit" value="Add to Cart">
             </form>
         </div>
     </section>

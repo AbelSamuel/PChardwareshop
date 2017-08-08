@@ -20,25 +20,32 @@
     <section>
         <h1><?php echo $category_name; ?></h1>
         <table>
-            <tr>                
+            <tr>
+                <th>CategoryID</th>                
                 <th>Name</th>
                 <th class="right">Price</th>
             </tr>
             <?php foreach ($products as $product) : ?>
             <tr>
+                <td><?php echo $product['categoryID']; ?></td>  
                 <td><a href="?action=view_product&amp;product_id=<?php 
                           echo $product['productID']; ?>">
                     <?php echo $product['productName']; ?>
                 </a></td>
                 <td class="right"><?php echo $product['listPrice']; ?></td>
+                <td><form action="." method="post">
+                    <input type="hidden" name="action"
+                           value="sort_products">
+                    <input type="hidden" name="product_id"
+                           value="<?php echo $product['productID']; ?>">
+                    <input type="hidden" name="category_id"
+                           value="<?php echo $product['categoryID']; ?>">
+                    <input type="submit" value="Sort">
+                </form>
+                </td>
             </tr>
             <?php endforeach; ?>            
         </table>
-                <form action="." method="get">
-                    <input type="hidden" name="action"
-                           value="sort_products">
-                    <input type="submit" value="Sort">
-                </form>
     </section>
 </main>
 <?php include '../view/footer.php'; ?>

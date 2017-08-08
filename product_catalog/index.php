@@ -52,21 +52,43 @@ if ($action == 'list_products') {
         include('product_view.php');
     }
 }
-    else if ($action == 'request_item')
-    {
-        include('request_thanks.php');
-    }
 
     else if ($action == 'sort_products')
     {
-    $category_id = filter_input(INPUT_GET, 'category_id', 
+    $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE) {
-        $category_id = 1;
+        $category_id = 2;
     }
     $category_name = get_category_name($category_id);
     $categories = get_categories();
     $products = sort_products_by_price($category_id);
     include('product_list.php');
+    }
+
+    else if ($action == 'add_to_cart')
+    {
+        $product_id = filter_input(INPUT_POST, 'product_id', 
+            FILTER_VALIDATE_INT);
+        if ($product_id == NULL || $product_id == FALSE) {
+                $product_id = 1;
+            }
+
+        $quantity = filter_input(INPUT_POST, 'quantity', 
+            FILTER_VALIDATE_INT);
+
+        if ($quantity == NULL || $quantity == FALSE) {
+                $quantity = 1;
+            }
+
+        $product = get_product($product_id);
+        $listPrice = $product['listPrice'];
+
+        $totalPrice = round($listPrice * $quantity, 2);
+        $totalPrice_f = number_format($totalPrice, 2);
+
+        add_product_to_cart($product_id, $quantity, $totalPrice_f);
+        $cart = get_cart();
+        include('../cart/view_cart.php');
     }
 ?>
